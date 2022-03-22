@@ -5,7 +5,7 @@ const FormControl = ({ label, ...restProps }) => {
     return (
         <View style={styles.formControl}>
             <Text style={styles.label}>{label}</Text>
-            <TextInput {...restProps} style={styles.input} autoFocus />
+            <TextInput {...restProps} style={styles.input} />
         </View>
     );
 };
