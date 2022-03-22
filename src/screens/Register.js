@@ -6,28 +6,49 @@ import Separator from "../components/Separator";
 
 const Register = () => {
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
+
     return (
         <View style={styles.formContainer}>
-            <Text style={styles.formTitle}>Login</Text>
+            <Text style={styles.formTitle}>Register</Text>
             <View style={styles.formFields}>
                 <FormControl
                     label="Username"
                     placeholder="Enter You Name..."
                     value={username}
                     onChangeText={setUsername}
+                    autoFocus
+                />
+                <FormControl
+                    label="Email"
+                    placeholder="abc@xyz.com"
+                    value={email}
+                    onChangeText={setEmail}
                 />
                 <FormControl
                     label="Password"
                     placeholder="Enter Strong Password..."
-                    secureTextEntry
                     value={password}
                     onChangeText={setPassword}
+                />
+                <FormControl
+                    label="Confrim Password"
+                    placeholder="Enter the password you added above"
+                    secureTextEntry
+                    value={password2}
+                    onChangeText={setPassword2}
                 />
                 <Button text="Submit" />
                 <Separator />
                 <Text style={styles.linkText}>
-                    Not a user? <Text style={styles.link}>Login Here</Text>
+                    Already a user?
+                    <Text
+                        style={styles.link}
+                        onPress={() => navigation.navigate("Register")}>
+                        Login Here
+                    </Text>
                 </Text>
             </View>
         </View>
@@ -59,8 +80,8 @@ const styles = StyleSheet.create({
         fontSize: 17,
     },
     link: {
-        textDecorationLine: "underline",
-        color: "#61dafb",
+        paddingStart: 10,
+        color: "#000",
         fontWeight: "bold",
     },
 });

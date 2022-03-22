@@ -4,7 +4,7 @@ import FormControl from "../components/FormControl";
 import Button from "../components/Button";
 import Separator from "../components/Separator";
 
-const Login = () => {
+const Login = ({ navigation }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     return (
@@ -28,7 +28,12 @@ const Login = () => {
                 <Button text="Submit" />
                 <Separator />
                 <Text style={styles.linkText}>
-                    Not a user? <Text style={styles.link}>Login Here</Text>
+                    Not a user?
+                    <Text
+                        style={styles.link}
+                        onPress={() => navigation.navigate("Register")}>
+                        Register Here
+                    </Text>
                 </Text>
             </View>
         </View>
@@ -39,7 +44,6 @@ export default Login;
 
 const styles = StyleSheet.create({
     formContainer: {
-        display: "flex",
         justifyContent: "center",
         alignItems: "stretch",
         width: "100%",
@@ -60,8 +64,8 @@ const styles = StyleSheet.create({
         fontSize: 17,
     },
     link: {
-        textDecorationLine: "underline",
-        color: "#61dafb",
+        paddingStart: 10,
+        color: "#000",
         fontWeight: "bold",
     },
 });
