@@ -4,7 +4,7 @@ import FormControl from "../components/FormControl";
 import Button from "../components/Button";
 import Separator from "../components/Separator";
 
-const Login = () => {
+const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     return (
@@ -16,7 +16,6 @@ const Login = () => {
                     placeholder="Enter You Name..."
                     value={username}
                     onChangeText={setUsername}
-                    autoFocus
                 />
                 <FormControl
                     label="Password"
@@ -35,7 +34,7 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
 
 const styles = StyleSheet.create({
     formContainer: {
