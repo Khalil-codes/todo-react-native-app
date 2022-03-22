@@ -1,21 +1,37 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormControl from "../components/FormControl";
 import Button from "../components/Button";
 import Separator from "../components/Separator";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../redux/auth/authSlice";
 
 const Login = ({ navigation }) => {
-    const [username, setUsername] = useState("");
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [isFilled, setIsFilled] = useState(false);
+
+    // To Disable Button from Submitting
+    useEffect(() => {
+        const unsub = () => {
+            if (email && password) setIsFilled(true);
+        };
+        unsub();
+    }, [email, password]);
+
+    const handleSubmit = () => {
+        dispatch(loginUser({ email, password, name: "Khalil" }));
+    };
     return (
         <View style={styles.formContainer}>
             <Text style={styles.formTitle}>Login</Text>
             <View style={styles.formFields}>
                 <FormControl
-                    label="Username"
-                    placeholder="Enter You Name..."
-                    value={username}
-                    onChangeText={setUsername}
+                    label="Email"
+                    placeholder="abc@xyz.com"
+                    value={email}
+                    onChangeText={setEmail}
                     autoFocus
                 />
                 <FormControl
@@ -25,7 +41,11 @@ const Login = ({ navigation }) => {
                     value={password}
                     onChangeText={setPassword}
                 />
-                <Button text="Submit" />
+                <Button
+                    text="Submit"
+                    onPress={handleSubmit}
+                    disabled={!isFilled}
+                />
                 <Separator />
                 <Text style={styles.linkText}>
                     Not a user?
