@@ -1,15 +1,12 @@
-import {
-    StyleSheet,
-    Text,
-    View,
-    Pressable,
-    TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 
-const Button = ({ text, ...restProps }) => {
+const Button = ({ text, disabled = false, onPress, ...restProps }) => {
     return (
-        <Pressable style={styles.button} {...restProps}>
+        <Pressable
+            style={[styles.button, disabled && styles.disabled]}
+            onPress={!disabled ? onPress : () => {}}
+            {...restProps}>
             <Text style={styles.btnText}>{text}</Text>
         </Pressable>
     );
@@ -29,6 +26,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 5,
+    },
+    disabled: {
+        backgroundColor: "#90E5FC",
     },
     btnText: {
         alignSelf: "center",
