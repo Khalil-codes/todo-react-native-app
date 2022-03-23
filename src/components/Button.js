@@ -2,10 +2,16 @@ import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 import Colors from "../Colors";
 
-const Button = ({ text, disabled = false, onPress, ...restProps }) => {
+const Button = ({
+    text,
+    style = [],
+    disabled = false,
+    onPress,
+    ...restProps
+}) => {
     return (
         <Pressable
-            style={[styles.button, disabled && styles.disabled]}
+            style={[styles.button, disabled && styles.disabled, ...style]}
             onPress={!disabled ? onPress : () => {}}
             {...restProps}>
             <Text style={styles.btnText}>{text}</Text>

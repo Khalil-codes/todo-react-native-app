@@ -5,7 +5,7 @@ import Colors from "../Colors";
 const FormControl = ({ label, ...restProps }) => {
     return (
         <View style={styles.formControl}>
-            <Text style={styles.label}>{label}</Text>
+            {label && <Text style={styles.label}>{label}</Text>}
             <TextInput {...restProps} style={styles.input} />
         </View>
     );
@@ -22,10 +22,12 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     input: {
+        fontSize: 17,
         height: 40,
         borderWidth: 1,
         borderColor: Colors.borderColor,
         padding: 10,
         borderRadius: 5,
+        backgroundColor: Colors.lightColor,
     },
 });
