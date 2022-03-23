@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import Separator from "../components/Separator";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../redux/auth/authSlice";
+import Colors from "../Colors";
 
 const Login = ({ navigation }) => {
     const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     },
     link: {
         paddingStart: 10,
-        color: "#000",
+        color: Colors.darkColor,
         fontWeight: "bold",
     },
 });

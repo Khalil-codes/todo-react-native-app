@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import React from "react";
+import Colors from "../Colors";
 
 const FormControl = ({ label, ...restProps }) => {
     return (
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         borderWidth: 1,
-        borderColor: "#ccc",
+        borderColor: Colors.borderColor,
         padding: 10,
         borderRadius: 5,
     },

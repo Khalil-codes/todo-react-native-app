@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FormControl from "../components/FormControl";
 import Button from "../components/Button";
 import Separator from "../components/Separator";
+import Colors from "../Colors";
 
 const Register = () => {
     const [username, setUsername] = useState("");
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     },
     link: {
         paddingStart: 10,
-        color: "#000",
+        color: Colors.darkColor,
         fontWeight: "bold",
     },
 });

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
+import Colors from "../Colors";
 
 const Button = ({ text, disabled = false, onPress, ...restProps }) => {
     return (
@@ -18,8 +19,8 @@ const styles = StyleSheet.create({
     button: {
         paddingHorizontal: 20,
         paddingVertical: 10,
-        backgroundColor: "#61dafb",
-        color: "#fff",
+        backgroundColor: Colors.primaryColor,
+        color: Colors.lightColor,
         height: 40,
         alignSelf: "flex-start",
         display: "flex",
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     disabled: {
-        backgroundColor: "#90E5FC",
+        backgroundColor: Colors.disabledColor,
     },
     btnText: {
         alignSelf: "center",

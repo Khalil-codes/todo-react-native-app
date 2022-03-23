@@ -3,6 +3,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./HomeScreen";
+import Colors from "../Colors";
 
 const About = () => {
     return (
@@ -27,7 +28,7 @@ const TabsScreen = () => {
                     }
                     return <Icon name={iconName} size={size} color={color} />;
                 },
-                tabBarActiveTintColor: "#FF6B6B",
+                tabBarActiveTintColor: Colors.primaryColor,
                 tabBarInactiveTintColor: "gray",
             })}>
             <Tab.Screen name="Home" component={HomeScreen} />

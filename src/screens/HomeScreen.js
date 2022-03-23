@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { useDispatch } from "react-redux";
-import Button from "../components/Button";
 import { useAuth } from "../redux/store";
 
 const HomeScreen = () => {
@@ -10,7 +9,7 @@ const HomeScreen = () => {
     return (
         <View
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Hello {user.name}</Text>
+            <Text>Hello World {user.name}</Text>
         </View>
     );
 };
