@@ -5,6 +5,7 @@ export default Colors = {
     successColor: "#6BCB77",
     errorColor: "#FF6B6B",
     darkColor: "#000000",
+    completedColor: "#adb5bd",
     lightColor: "#ffffff",
     borderColor: "#cccccc",
 };
