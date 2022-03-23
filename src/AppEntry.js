@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { logoutUser } from "./redux/auth/authSlice";
 import Logout from "./components/Logout";
 import TabsScreen from "./screens/TabsScreen";
+import Colors from "./Colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,10 @@ const AppEntry = () => {
     const dispatch = useDispatch();
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator
+                screenOptions={{
+                    contentStyle: { backgroundColor: Colors.lightColor },
+                }}>
                 {user ? (
                     <Stack.Screen
                         name="Dashboard"
