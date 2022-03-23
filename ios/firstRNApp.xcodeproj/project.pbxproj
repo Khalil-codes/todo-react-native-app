@@ -239,6 +239,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				FB815AADCEFC3C87C59097F0 /* [CP] Embed Pods Frameworks */,
+				77E23E676E8F89E0BB3D4D03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,6 +371,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-firstRNApp-firstRNAppTests/Pods-firstRNApp-firstRNAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77E23E676E8F89E0BB3D4D03 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-firstRNApp/Pods-firstRNApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4589EF64E62B809B781BFC0 /* [CP] Check Pods Manifest.lock */ = {
