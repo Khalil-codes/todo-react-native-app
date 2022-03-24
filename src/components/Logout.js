@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/auth/authSlice";
@@ -11,7 +11,7 @@ const Logout = () => {
         <TouchableOpacity
             style={styles.btn}
             onPress={() => dispatch(logoutUser())}>
-            <Icon name="log-out" color={Colors.darkColor} size={30} />
+            <Icon name="logout" color={Colors.darkColor} size={30} />
         </TouchableOpacity>
     );
 };
