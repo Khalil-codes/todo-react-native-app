@@ -5,6 +5,8 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 const AnimatedIcon = Animated.createAnimatedComponent(Icon);
 import Colors from "../Colors";
+import { useDispatch } from "react-redux";
+import { completeTodo, deleteTodo } from "../redux/todo/todoSlice";
 
 const leftActions = () => {
     return (
@@ -31,7 +33,8 @@ const rigthActions = () => {
     );
 };
 
-const TodoItem = ({ title, id, completed, onSwipeLeft, onSwipeRight }) => {
+const TodoItem = ({ text, _id, completed }) => {
+    const dispatch = useDispatch();
     const swipeableRef = useRef(null);
     return (
         <Swipeable
@@ -39,17 +42,17 @@ const TodoItem = ({ title, id, completed, onSwipeLeft, onSwipeRight }) => {
             renderLeftActions={leftActions}
             renderRightActions={rigthActions}
             onSwipeableLeftOpen={() => {
-                onSwipeLeft(id);
+                dispatch(completeTodo(_id));
                 swipeableRef.current && swipeableRef.current.close();
             }}
-            onSwipeableRightOpen={() => onSwipeRight(id)}>
+            onSwipeableRightOpen={() => dispatch(deleteTodo(_id))}>
             <View style={[styles.todoCard, completed && styles.completed]}>
                 <Text
                     style={[
                         styles.todoTitle,
                         completed && styles.completedText,
                     ]}>
-                    {title}
+                    {text}
                 </Text>
             </View>
         </Swipeable>
